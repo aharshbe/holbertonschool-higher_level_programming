@@ -11,12 +11,14 @@ int check_cycle(listint_t *list)
 
 	if (!list && !list->next)
 		return (0);
-	h = list, o = h->next;
-	while (o->next && o->next->next && o->next->next->next)
+	h = list;
+	o = h->next;
+	while (h && o->next && o->next->next)
 	{
 		if (h == o)
 			return (1);
-		h = h->next, o = o->next->next->next;
+		h = h->next;
+		o = o->next->next;
 	}
 	return (0);
 }
