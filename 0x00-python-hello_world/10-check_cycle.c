@@ -1,10 +1,10 @@
 #include "lists.h"
-#include <stdio.h>
 /**
  * check_cycle - checks for a cycle in a linkedlist
  * @list: linked list to be checked
  * Return: 1 if there is a cycle and 0 if there is not
  */
+
 int check_cycle(listint_t *list)
 {
 	int s[1024];
