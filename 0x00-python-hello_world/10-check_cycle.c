@@ -9,10 +9,10 @@ int check_cycle(listint_t *list)
 {
 	listint_t *h, *o;
 
-	if (!list)
+	if (!list && !list->next)
 		return (0);
 	h = list, o = h->next;
-	while (list && o->next && o->next->next && o->next->next->next)
+	while (o->next && o->next->next && o->next->next->next)
 	{
 		if (h == o)
 			return (1);
