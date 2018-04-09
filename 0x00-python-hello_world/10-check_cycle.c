@@ -10,10 +10,11 @@ int check_cycle(listint_t *list)
 	int s[1024];
 	int i = 0, k = 0, recall = 0;
 
+	if (!list)
+		return (0);
 	while (list)
 	{
-		s[k] = list->n;
-		k++;
+		s[k] = list->n, k++;
 		while (s[i])
 		{
 			if (s[i] == list->next->n)
