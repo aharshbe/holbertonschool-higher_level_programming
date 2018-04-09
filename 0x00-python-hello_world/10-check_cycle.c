@@ -7,26 +7,25 @@
 
 int check_cycle(listint_t *list)
 {
-	int s[1024];
-	int i = 0, k = 0, recall = 0;
+	int count = 0, store = 0, recall = 0;
+	listint_t *h, *o;
 
 	if (!list)
 		return (0);
-	while (list)
+	h = o = list;
+	while (h)
 	{
-		s[k] = list->n, k++;
-		while (s[i])
+		for (count = 0; count < store; count++, o = o->next)
 		{
-			if (s[i] == list->next->n)
+			if (h == o)
 			{
 				recall = 1;
 				break;
 			}
-			i++;
 		}
 		if (recall)
 			return (1);
-		list = list->next;
+		store++, o = list, h = h->next;
 	}
 	return (0);
 }
