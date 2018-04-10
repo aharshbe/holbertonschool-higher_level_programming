@@ -8,7 +8,7 @@ else:
 if ((x % 10) > 5):
     print("Last digit of {} is {} and is greater than 5"
           .format(number, x % 10))
-elif (not (x % 10)):
+elif ((x % 10) == 0):
     print("Last digit of {} is {} and is 0"
           .format(number, x % 10))
 elif ((x % 10) < 6 and (not 0)):
