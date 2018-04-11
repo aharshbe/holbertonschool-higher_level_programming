@@ -36,13 +36,13 @@ listint_t *insert_node(listint_t **head, int number)
 		current = current->next;
 	}
 
-	if (tmp_head != NULL)
+	if (current != NULL)
 	{
 		new->next = current;
 		tmp_head->next = new;
 	}
 	else
-		*head = new;
+		tmp_head->next = new;
 
 	return (new);	
 }
