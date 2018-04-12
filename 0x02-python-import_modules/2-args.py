@@ -4,9 +4,10 @@ if (__name__ == '__main__'):
     len_of_arr = len(argv)
     len_of_arr -= 1
 
-    if (len_of_arr == 1):
+    if (len_of_arr == 0):
         print("{} arguments.".format(len_of_arr))
-    elif (len_of_arr == 2):
+        exit()
+    elif (len_of_arr == 1):
         print("{} argument: ".format(len_of_arr))
     else:
         print("{} arguments: ".format(len_of_arr))
