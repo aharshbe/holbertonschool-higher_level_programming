@@ -8,10 +8,11 @@ if __name__ == "__main__":
         exit(1)
     else:
         n1, n2, op, j, r = int(argv[1]), int(argv[3]), argv[2], 0, 0
-        for j, i in enumerate(operators):
+        for i in operators:
             if (op == i):
                 print("{} {} {} = {}".format(n1, i, n2, f[j](n1, n2)))
                 r = 1
+            j += 1
         if (not r):
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
