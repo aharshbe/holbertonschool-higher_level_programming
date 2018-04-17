@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 	int i[1 << 10], l = 0, k = 0, r = 0, s = 0;
 	const listint_t *tmp;
 
-	if (!head)
+	if (!*head)
 		return (1);
 	tmp = *head;
 
