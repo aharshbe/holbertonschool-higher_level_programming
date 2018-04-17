@@ -6,7 +6,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i[1024], j = 0, l = 0, k = 0, r = 0, s = 0;
+	int i[1024], l = 0, k = 0, r = 0, s = 0;
 	const listint_t *tmp;
 
 	if (!head)
@@ -19,14 +19,13 @@ int is_palindrome(listint_t **head)
 		return (1);
 	tmp = *head;
 	for ( ; tmp; tmp = tmp->next, s++)
-		i[j] = tmp->n;
-	s = --l;
-	for ( ; s >= (l / 2); k++, s--)
+		i[s] = tmp->n;
+	l--;
+	for ( ; l; k++, l--)
 	{
-		if (i[k] == i[s])
-			r = 1;
-		else
-			r = 0;
+		if (i[k] != i[l])
+			break;
+		r = 1;
 	}
 	return (r);
 }
