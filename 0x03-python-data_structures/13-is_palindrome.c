@@ -6,7 +6,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i[1024], l = 0, k = 0, r = 0, s = 0;
+	int i[1 << 10], l = 0, k = 0, r = 0, s = 0;
 	const listint_t *tmp;
 
 	if (!head)
@@ -20,10 +20,10 @@ int is_palindrome(listint_t **head)
 	tmp = *head;
 	for ( ; tmp; tmp = tmp->next, s++)
 		i[s] = tmp->n;
-	l--;
-	for ( ; l; k++, l--)
+	s = --l;
+	for ( ; s >= (l / 2); k++, s--)
 	{
-		if (i[k] != i[l])
+		if (i[k] != i[s])
 			break;
 		r = 1;
 	}
