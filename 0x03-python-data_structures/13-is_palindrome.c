@@ -6,15 +6,20 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i[1024], j = 0, l = 0, k = 0, r = 0;
+	int i[1024], j = 0, l = 0, k = 0, r = 0, s = 0;
+	const listint_t *tmp;
 
 	if (!head)
 		return (1);
+	tmp = *head;
 
-	for ( ; *head; *head = (*head)->next, j++, l++)
-		i[j] = (*head)->n;
-	l--;
-	for ( ; l; k++, l--)
+	for ( ; tmp; tmp = tmp->next, j++, l++, s++)
+		i[j] = tmp->n;
+	if (l == 1)
+		return (1);
+	s = --l;
+	tmp = *head;
+	for ( ; s >= (l / 2); k++, l--, s--)
 	{
 		if (i[k] == i[l])
 			r = 1;
