@@ -11,7 +11,6 @@ int is_palindrome(listint_t **head)
 	int i[1 << 10];
 
 	tmp = *head;
-
 	if (!*head)
 		return (1);
 
@@ -19,8 +18,6 @@ int is_palindrome(listint_t **head)
 		;
 	if (l == 1)
 		return (1);
-
-
 	tmp = *head;
 	for ( ; tmp; tmp = tmp->next, s++)
 		i[s] = tmp->n;
