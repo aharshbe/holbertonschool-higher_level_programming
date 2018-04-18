@@ -14,11 +14,9 @@ int is_palindrome(listint_t **head)
 	if (!*head)
 		return (1);
 	for ( ; tmp; tmp = tmp->next, l++, s++)
-	{
-		if (l == 1)
-			return (1);
 		i[s] = tmp->n;
-	}
+	if (l == 1)
+		return (1);
 	s = --l;
 	for ( ; s >= l / 2; k++, s--)
 	{
