@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 
+#define BUF 10000
+
 /**
  * struct listint_s - singly linked list
  * @n: integer
