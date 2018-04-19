@@ -5,7 +5,7 @@ def best_score(a_dictionary):
         for i in a_dictionary:
             if (x < a_dictionary[i]):
                 x = a_dictionary[i]
-                person  = i
+                person = i
             else:
                 pass
         return person
