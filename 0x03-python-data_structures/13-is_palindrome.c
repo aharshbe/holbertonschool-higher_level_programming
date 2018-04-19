@@ -13,13 +13,10 @@ int is_palindrome(listint_t **head)
 	tmp = *head;
 	if (!*head)
 		return (1);
-	for ( ; tmp; tmp = tmp->next, l++)
-		;
+	for ( ; tmp; tmp = tmp->next, l++, s++)
+		i[s] = tmp->n;
 	if (l == 1)
 		return (1);
-	tmp = *head;
-	for ( ; tmp; tmp = tmp->next, s++)
-		i[s] = tmp->n;
 	s = --l;
 	for ( ; s >= l / 2; k++, s--)
 	{
