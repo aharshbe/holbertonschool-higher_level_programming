@@ -9,4 +9,4 @@ def roman_to_int(roman_string):
             b = r[p]
             x += r[p]
         return x
-    return None
+    return 0
