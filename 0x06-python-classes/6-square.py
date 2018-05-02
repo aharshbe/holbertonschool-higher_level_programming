@@ -8,11 +8,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.size = size
-
-        if (type(position) is not tuple):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.position = position
+            self.__position = position
 
     @property
     def size(self):
@@ -29,47 +25,38 @@ class Square:
         else:
             self.__size = value
 
+    @property
     def position(self):
-        """Offset position of square"""
+        """Getter for position"""
         return (self.__position)
 
+    @position.setter
     def position(self, value):
-        """Offset position of square"""
-        if (type(value) is not tuple):
+        """Setter for position"""
+        if (type(self.__position) is not tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif (len(value) != 2):
+        elif (len(__position) is not 2):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif ((type(value[0]) is not int and type(value[1])) is not int):
+        elif (type(self.__position[0]) is not int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
+        elif (type(self.__position[1]) is not int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif (self.__position[0] < 0 or self.__position[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
     def area(self):
-        """Return area of square"""
+        """Return area size"""
         return (self.size ** 2)
 
     def my_print(self):
-        """Print square"""
+        """
+        prints to the stdout square with # or empty line if 0
+        """
         if (not self.size):
-            for i in range(1):
-                for i in range(1):
-                    print("", end='')
             print()
-
-        horozontal = self.position[0]
-        if (type(horozontal) is not int):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        verticle = self.position[1]
+        for i in range(self.__position[1]):
+            print()
         for i in range(self.size):
-            while (verticle):
-                print()
-                verticle -= 1
-            for i in range(self.size):
-                while (horozontal):
-                    print(" ", end='')
-                    horozontal -= 1
-                print("#", end='')
-            horozontal = self.position[0]
-            print()
+            print("{}{}".format(" " * self.__position[0], "#" * self.size))
