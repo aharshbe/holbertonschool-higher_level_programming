@@ -67,12 +67,16 @@ class Square:
 
     def position(self, value):
         """Offset position of square"""
-        try:
-            if (value[0] < 0 or value[1] < 0):
-                raise TypeError("position must be a"
-                                "tuple of 2 positive integers")
-            else:
-                self.position[0] = value[0]
-                self.position[1] = value[1]
-        except:
-            print("some error")
+        if (type(value) is not tuple):
+            raise TypeError("position must be a tuple of"
+                            "2 positive integers")
+        elif (len(value) != 2):
+            raise TypeError("position must be a tuple of"
+                            "2 positive integers")
+        elif (not(type(value[0]) is int and type(value[1])) is int):
+            raise TypeError("position must be a tuple of"
+                            "2 positive integers")
+        elif value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of"
+                            "2 positive integers")
+        self.position = value
