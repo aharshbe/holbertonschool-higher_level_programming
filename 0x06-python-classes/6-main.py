@@ -15,3 +15,8 @@ my_square_3 = Square(3, (3, 0))
 my_square_3.my_print()
 
 print("--")
+
+my_square_4 = Square(5, ('a', 0))
+my_square_4.my_print()
+
+print("--")
