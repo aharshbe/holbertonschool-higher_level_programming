@@ -11,10 +11,8 @@ class Square:
 
         if (type(position) is not tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif (type(position[0]) is not int):
-            raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.position = position
+            self.__position = position
 
     @property
     def size(self):
@@ -31,10 +29,12 @@ class Square:
         else:
             self.__size = value
 
+    @property
     def position(self):
         """Offset position of square"""
-        return (self.position)
+        return (self.__position)
 
+    @position.setter
     def position(self, value):
         """Offset position of square"""
         if (type(value) is not tuple):
@@ -46,7 +46,7 @@ class Square:
         elif value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.position = value
+            self.__position = value
 
     def area(self):
         """Return area of square"""
@@ -60,8 +60,8 @@ class Square:
                     print("", end='')
             print()
 
-        horozontal = self.position[0]
-        verticle = self.position[1]
+        horozontal = self.__position[0]
+        verticle = self.__position[1]
         for i in range(self.size):
             while (verticle):
                 print()
@@ -71,5 +71,5 @@ class Square:
                     print(" ", end='')
                     horozontal -= 1
                 print("#", end='')
-            horozontal = self.position[0]
+            horozontal = self.__position[0]
             print()
