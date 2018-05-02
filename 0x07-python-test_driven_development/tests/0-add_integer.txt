@@ -1,0 +1,37 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+    >>> print(add_integer(1, 2))
+    3
+    >>> print(add_integer(100, -2))
+    98
+    >>> print(add_integer(2))
+    100
+    >>> print(add_integer(100.3, -2))
+    98
+    >>> try:
+    ...     print(add_integer(4, "School"))
+    ... except Exception as e:
+    ...    	print(e)
+    b must be an integer
+    >>> try:
+    ...     print(add_integer(None))
+    ... except Exception as e:
+    ...    	print(e)
+    a must be an integer
+    >>> new_dict = dict()
+    >>> try:
+    ...     print(add_integer(new_dict))
+    ... except Exception as e:
+    ...    	print(e)
+    a must be an integer
