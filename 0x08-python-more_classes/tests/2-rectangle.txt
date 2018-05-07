@@ -1,0 +1,70 @@
+The ``2-rectangle`` module
+======================
+
+Using ``2-rectangle``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``Rectangle`` from the ``2-rectangle`` module:
+
+    >>> Rectangle = __import__('2-rectangle').Rectangle
+
+Now use it:
+
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
+    >>> my_rectangle.width = 10
+    >>> my_rectangle.height = 3
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 3, '_Rectangle__width': 10}
+
+    >>> try:
+    ...     print(Rectangle(4, "School"))
+    ... except Exception as e:
+    ...    	print(e)
+    height must be an integer
+
+    >>> try:
+    ...     print(Rectangle("School", 4))
+    ... except Exception as e:
+    ...    	print(e)
+    width must be an integer
+
+    >>> try:
+    ...     print(Rectangle(-1, 4))
+    ... except Exception as e:
+    ...    	print(e)
+    width must be >= 0
+
+    >>> try:
+    ...     print(Rectangle(5, -4))
+    ... except Exception as e:
+    ...    	print(e)
+    height must be >= 0
+
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 8 - Perimeter: 12
+
+    >>> my_rectangle.width = 10
+    >>> my_rectangle.height = 3
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 30 - Perimeter: 26
+
+    >>> my_rectangle.width = 0
+    >>> my_rectangle.height = 3
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 0 - Perimeter: 0
+
+    >>> my_rectangle.width = 0
+    >>> my_rectangle.height = 0
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 0 - Perimeter: 0
+
+    >>> my_rectangle.width = 3
+    >>> my_rectangle.height = 0
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 0 - Perimeter: 0
+
