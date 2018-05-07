@@ -32,3 +32,5 @@ Now use it:
     ... except Exception as e:
     ...     print(e)
     first_name must be a string
+    >>> print_square(None)
+    size must be an integer
