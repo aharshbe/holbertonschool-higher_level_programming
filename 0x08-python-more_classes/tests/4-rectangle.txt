@@ -1,13 +1,13 @@
-The ``3-rectangle`` module
+The ``4-rectangle`` module
 ======================
 
-Using ``3-rectangle``
+Using ``4-rectangle``
 -------------------
 
 This is an example text file in reStructuredText format.  First import
-``Rectangle`` from the ``3-rectangle`` module:
+``Rectangle`` from the ``4-rectangle`` module:
 
-    >>> Rectangle = __import__('3-rectangle').Rectangle
+    >>> Rectangle = __import__('4-rectangle').Rectangle
 
 Now use it:
 
@@ -81,3 +81,10 @@ Now use it:
     ##########
     ##########
 
+    >>> new_rectangle = eval(repr(my_rectangle))
+    >>> print(new_rectangle is my_rectangle)
+    False
+
+    >>> new_rectangle = eval(repr(my_rectangle))
+    >>> print(type(new_rectangle) is type(my_rectangle))
+    True
