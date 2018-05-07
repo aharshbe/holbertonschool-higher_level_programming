@@ -8,21 +8,16 @@ def check_value(value, t):
     """
     Function to check values
     """
-    e1w = "width must be an integer"
-    e2w = "width must be >= 0"
-    e1h = "height must be an integer"
-    e2h = "height must be >= 0"
-
     if not isinstance(value, int):
         if t:
-            raise TypeError(e1w)
+            raise TypeError("width must be an integer")
         else:
-            raise TypeError(e1h)
+            raise TypeError("height must be an integer")
     if value < 0:
         if t:
-            raise ValueError(e2w)
+            raise ValueError("width must be >= 0")
         else:
-            raise ValueError(e2h)
+            raise ValueError("height must be >= 0")
     return value
 
 
