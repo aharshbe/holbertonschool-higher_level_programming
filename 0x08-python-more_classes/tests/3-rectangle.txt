@@ -1,13 +1,13 @@
-The ``2-rectangle`` module
+The ``3-rectangle`` module
 ======================
 
-Using ``2-rectangle``
+Using ``3-rectangle``
 -------------------
 
 This is an example text file in reStructuredText format.  First import
-``Rectangle`` from the ``2-rectangle`` module:
+``Rectangle`` from the ``3-rectangle`` module:
 
-    >>> Rectangle = __import__('2-rectangle').Rectangle
+    >>> Rectangle = __import__('3-rectangle').Rectangle
 
 Now use it:
 
@@ -67,4 +67,11 @@ Now use it:
     >>> my_rectangle.height = 0
     >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
     Area: 0 - Perimeter: 0
+
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print(str(my_rectangle))
+    ##
+    ##
+    ##
+    ##
 
