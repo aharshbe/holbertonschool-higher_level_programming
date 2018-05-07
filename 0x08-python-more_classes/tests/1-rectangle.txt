@@ -1,0 +1,21 @@
+The ``1-rectangle`` module
+======================
+
+Using ``1-rectangle``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``Rectangle`` from the ``1-rectangle`` module:
+
+    >>> Rectangle = __import__('1-rectangle').Rectangle
+
+Now use it:
+
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
+    >>> my_rectangle.width = 10
+    >>> my_rectangle.height = 3
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 3, '_Rectangle__width': 10}

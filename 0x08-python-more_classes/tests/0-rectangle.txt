@@ -1,0 +1,19 @@
+The ``0-rectangle`` module
+======================
+
+Using ``0-rectangle``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``Rectangle`` from the ``0-rectangle`` module:
+
+    >>> Rectangle = __import__('0-rectangle').Rectangle
+
+Now use it:
+
+    >>> my_rectangle = Rectangle()
+
+    >>> print(type(my_rectangle))
+    <class '0-rectangle.Rectangle'>
+    >>> print(my_rectangle.__dict__)
+    {}
