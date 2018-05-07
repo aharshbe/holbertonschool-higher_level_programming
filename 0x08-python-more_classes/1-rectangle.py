@@ -7,6 +7,7 @@ Create empty class for rectangle
 def check_value(value, t):
     """
     Function to check values
+    t is the type, height or width
     """
     if not isinstance(value, int):
         if t:
