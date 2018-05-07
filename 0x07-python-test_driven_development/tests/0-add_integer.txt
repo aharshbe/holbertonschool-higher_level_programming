@@ -19,6 +19,17 @@ Now use it:
     100
     >>> print(add_integer(100.3, -2))
     98
+
+    >>> add_integer(123, float('NaN'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(123, float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+    
     >>> try:
     ...     print(add_integer(4, "School"))
     ... except Exception as e:
