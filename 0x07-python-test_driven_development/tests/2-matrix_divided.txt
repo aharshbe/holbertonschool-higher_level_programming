@@ -48,6 +48,11 @@ Now use it:
     ...     print(e)
     div must be a number
     >>> try:
+    ...     print(matrix_divided(matrix, None))
+    ... except Exception as e:
+    ...     print(e)
+    div must be a number
+    >>> try:
     ...     print(matrix_divided(wrong_matrix, 2))
     ... except Exception as e:
     ...     print(e)
