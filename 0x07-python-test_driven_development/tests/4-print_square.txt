@@ -46,3 +46,11 @@ Now use it:
     ... except Exception as e:
     ...     print(e)
     size must be an integer
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+    >>> print_square(False)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
