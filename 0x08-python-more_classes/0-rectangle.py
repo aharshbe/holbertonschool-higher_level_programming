@@ -3,8 +3,9 @@
 Create empty class for rectangle
 """
 
+
 class Rectangle:
-	"""
-	Class for rectangle
-	"""
-	pass
+    """
+    Class for rectangle
+    """
+    pass
