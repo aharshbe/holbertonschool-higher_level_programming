@@ -27,37 +27,46 @@ class Rectangle:
     Class for rectangle
     """
     def __init__(self, width=0, height=0):
+        """comment"""
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """comment"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """comment"""
         self.__width = check_value(value, 1)
 
     @property
     def height(self):
+        """comment"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """comment"""
         self.__height = check_value(value, 0)
 
     def area(self):
+        """comment"""
         return self.width * self.height
 
     def perimeter(self):
+        """comment"""
         if self.height == 0 or self.width == 0:
             return 0
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
+        """comment"""
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join(["#" * self.width for i in range(self.height)])
 
     def __repr__(self):
+        """comment"""
         return "Rectangle({:d}, {:d})".format(self.width, self.height)

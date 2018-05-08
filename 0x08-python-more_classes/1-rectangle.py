@@ -27,21 +27,26 @@ class Rectangle:
     Class for rectangle
     """
     def __init__(self, width=0, height=0):
+        """comment"""
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """comment"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """comment"""
         self.__width = check_value(value, 1)
 
     @property
     def height(self):
+        """comment"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """comment"""
         self.__height = check_value(value, 0)
