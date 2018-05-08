@@ -1,0 +1,72 @@
+The ``8-rectangle`` module
+======================
+
+Using ``8-rectangle``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``Rectangle`` from the ``8-rectangle`` module:
+
+    >>> Rectangle = __import__('8-rectangle').Rectangle
+
+Now use it:
+
+    >>> my_rectangle_1 = Rectangle(2, 4)
+    >>> my_rectangle_2 = Rectangle(2, 4)
+    >>> print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+    2 instances of Rectangle
+    >>> del my_rectangle_1
+    Bye rectangle...
+    >>> print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+    1 instances of Rectangle
+    >>> del my_rectangle_2
+    Bye rectangle...
+    >>> print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+    0 instances of Rectangle
+
+    >>> my_rectangle_1 = Rectangle(8, 4)
+    >>> print(my_rectangle_1)
+    ########
+    ########
+    ########
+    ########
+    >>> my_rectangle_1.print_symbol = "&"
+    >>> print(my_rectangle_1)
+    &&&&&&&&
+    &&&&&&&&
+    &&&&&&&&
+    &&&&&&&&
+    >>> my_rectangle_2 = Rectangle(2, 1)
+    >>> print(my_rectangle_2)
+    ##
+    >>> Rectangle.print_symbol = "C"
+    >>> print(my_rectangle_2)
+    CC
+    >>> my_rectangle_3 = Rectangle(7, 3)
+    >>> print(my_rectangle_3)
+    CCCCCCC
+    CCCCCCC
+    CCCCCCC
+    >>> my_rectangle_3.print_symbol = ["C", "is", "fun!"]
+    >>> print(my_rectangle_3)
+    ['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']
+    ['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']
+    ['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']['C', 'is', 'fun!']
+
+    >>> my_rectangle_1 = Rectangle(8, 4)
+    Bye rectangle...
+    >>> my_rectangle_2 = Rectangle(2, 3)
+    Bye rectangle...
+    >>> if Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    ...    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
+    ... else:
+    ...     print("my_rectangle_2 is bigger than my_rectangle_1")
+    my_rectangle_1 is bigger or equal to my_rectangle_2
+
+    >>> my_rectangle_2.width = 10
+    >>> my_rectangle_2.height = 5
+    >>> if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    ...    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
+    ... else:
+    ...    print("my_rectangle_2 is bigger than my_rectangle_1")
+    my_rectangle_2 is bigger than my_rectangle_1
