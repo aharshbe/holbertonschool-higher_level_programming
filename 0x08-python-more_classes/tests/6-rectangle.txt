@@ -1,0 +1,25 @@
+The ``6-rectangle`` module
+======================
+
+Using ``6-rectangle``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``Rectangle`` from the ``6-rectangle`` module:
+
+    >>> Rectangle = __import__('6-rectangle').Rectangle
+
+Now use it:
+
+    >>> my_rectangle_1 = Rectangle(2, 4)
+    >>> my_rectangle_2 = Rectangle(2, 4)
+    >>> print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+    2 instances of Rectangle
+    >>> del my_rectangle_1
+    Bye rectangle...
+    >>> print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+    1 instances of Rectangle
+    >>> del my_rectangle_2
+    Bye rectangle...
+    >>> print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+    0 instances of Rectangle
