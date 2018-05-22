@@ -102,3 +102,9 @@ class Rectangle(Base):
             for i in range(self.__width):
                 print('#', end='')
             print()
+
+    def __str__(self):
+        string = "[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" \
+                + str(self.__y) + "- " + str(self.__width) + "/" \
+                + str(self.__height) + ""
+        return string
