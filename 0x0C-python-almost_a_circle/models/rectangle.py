@@ -115,16 +115,29 @@ class Rectangle(Base):
                 + str(self.__height) + ""
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         ''' updates any arguments passed '''
-        for i, j in enumerate(args):
-            if i == 0:
-                self.id = j
-            if i == 1:
-                self.__width = j
-            if i == 2:
-                self.__height = j
-            if i == 3:
-                self.__x = j
-            if i == 4:
-                self.__y = j
+        if (args):
+            for i, j in enumerate(args):
+                if i == 0:
+                    self.id = j
+                if i == 1:
+                    self.__width = j
+                if i == 2:
+                    self.__height = j
+                if i == 3:
+                    self.__x = j
+                if i == 4:
+                    self.__y = j
+        else:
+            for i in kwargs:
+                if i == "height":
+                    self.__height = kwargs[i]
+                if i == 'width':
+                    self.__width = kwargs[i]
+                if i == 'x':
+                    self.__x = kwargs[i]
+                if i == 'y':
+                    self.__y = kwargs[i]
+                if i == 'id':
+                    self.id = kwargs[i]
