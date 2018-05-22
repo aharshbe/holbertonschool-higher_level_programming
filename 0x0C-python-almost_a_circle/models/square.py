@@ -52,3 +52,8 @@ class Square(Rectangle):
                     self.__y = kwargs[i]
                 if i == 'id':
                     self.id = kwargs[i]
+
+    def to_dictionary(self):
+        ''' return dictionary represenation'''
+        return {'id': self.id, 'size': self.__size,
+                'x': self.__x, 'y': self.__y}
