@@ -114,3 +114,17 @@ class Rectangle(Base):
                 + str(self.__y) + "- " + str(self.__width) + "/" \
                 + str(self.__height) + ""
         return string
+
+    def update(self, *args):
+        ''' updates any arguments passed '''
+        for i, j in enumerate(args):
+            if i == 0:
+                self.id = j
+            if i == 1:
+                self.__width = j
+            if i == 2:
+                self.__height = j
+            if i == 3:
+                self.__x = j
+            if i == 4:
+                self.__y = j
